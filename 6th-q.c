@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+
 int sumOfDigits(int num) {
     int sum = 0;
     while (num != 0) {
@@ -19,6 +20,13 @@ int reverseNumber(int num) {
     return reversedNum;
 }
 
+
+int isPalindrome(int num) {
+    int originalNum = num;
+    int reversedNum = reverseNumber(num);
+    return (originalNum == reversedNum);
+}
+
 int main() {
     int number;
 
@@ -33,6 +41,13 @@ int main() {
     
     int reversed = reverseNumber(number);
     printf("Reversed number of %d is: %d\n", number, reversed);
+
+    
+    if (isPalindrome(number)) {
+        printf("%d is a palindrome!\n", number);
+    } else {
+        printf("%d is not a palindrome.\n", number);
+    }
 
     return 0;
 }
